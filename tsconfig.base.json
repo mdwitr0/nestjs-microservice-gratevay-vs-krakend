@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@samples/actions": ["libs/actions/src/index.ts"],
-      "@samples/queues": ["libs/queues/src/index.ts"]
+      "@actions": ["libs/actions/src/index.ts"],
+      "@enum": ["libs/enum/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
