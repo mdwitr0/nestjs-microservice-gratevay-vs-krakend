@@ -1,0 +1,11 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets   = ["native", "linux-musl"]
+  previewFeatures = ["interactiveTransactions", "tracing"]
+  output   = "<%= outputPath %>"
+}
+
+datasource db {
+  provider = "<%= dbType %>"
+  url      = env("<%= constantName %>_DB_URL")
+}

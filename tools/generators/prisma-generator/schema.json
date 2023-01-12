@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "$id": "prisma-generator",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Название сервиса",
+      "x-prompts": "Как называется сервис?"
+    },
+    "provider": {
+      "type": "string",
+      "description": "База данных",
+      "x-prompt": {
+        "message": "Какую базу данных вы хотите использовать?",
+        "type": "list",
+        "items": [
+          { "value": "postgresql", "label": "Postgres" },
+          { "value": "mongodb", "label": "MongoDB" },
+          { "value": "cockroachdb", "label": "CockroachDB" }
+        ]
+      }
+    }
+  },
+  "required": ["name", "provider"]
+}
