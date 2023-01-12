@@ -1,1 +1,1 @@
-export * from './lib/enum';
+export * from './lib/service-queues.enum';
