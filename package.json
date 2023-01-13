@@ -6,9 +6,9 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "db:gen": "prisma generate --schema ./libs/prisma-clients/${SERVICE}/schema.prisma",
-    "db:pull": "prisma db pull --schema ./libs/prisma-clients/${SERVICE}/schema.prisma",
-    "db:push": "prisma db push --schema ./libs/prisma-clients/${SERVICE}/schema.prisma",
+    "db:gen": "prisma generate --schema ./libs/prisma-clients/${SERVICE}/prisma/schema.prisma",
+    "db:pull": "prisma db pull --schema ./libs/prisma-clients/${SERVICE}/prisma/schema.prisma",
+    "db:push": "prisma db push --schema ./libs/prisma-clients/${SERVICE}/prisma/schema.prisma",
     "db:migrate:deploy": "prisma migrate deploy --schema ./libs/prisma-clients/${SERVICE}/prisma/schema.prisma",
     "db:migrate:dev": "prisma migrate dev --schema ./libs/prisma-clients/${SERVICE}/prisma/schema.prisma --",
     "postinstall": "SERVICE=inventory npm run db:gen && SERVICE=user npm run db:gen"
