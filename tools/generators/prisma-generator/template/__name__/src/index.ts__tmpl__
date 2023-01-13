@@ -1,4 +1,6 @@
 export * from './lib/prisma-<%= name %>.module';
 export * from './lib/prisma-<%= name %>.service';
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 export { PrismaClient as  <%= className %>Client } from '.prisma/<%= name %>-client';
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
 export * from '.prisma/<%= name %>-client'

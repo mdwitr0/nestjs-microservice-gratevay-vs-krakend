@@ -1,5 +1,6 @@
 import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
-import { PrismaClient } from '../../prisma';
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+import { PrismaClient } from '.prisma/<%= name %>-client';
 
 @Injectable()
 export class Prisma<%= className %>Service

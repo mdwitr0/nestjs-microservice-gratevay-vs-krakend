@@ -1,5 +1,6 @@
 import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
-import { PrismaClient } from '../../prisma';
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+import { PrismaClient } from '.prisma/inventory-client';
 
 @Injectable()
 export class PrismaInventoryService
