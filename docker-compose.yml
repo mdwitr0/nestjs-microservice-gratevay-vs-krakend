@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15.1
+    restart: always
+    command: postgres -c 'max_connections=1000'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - default
+    ports:
+      - '5433:5432'
+
+  pgbouncer:
+    image: brainsam/pgbouncer:latest
+    restart: always
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - POOL_MODE=transaction
+      - MAX_CLIENT_CONN=1000
+    networks:
+      - default
+    ports:
+      - "6432:6432"
+
+
+
+networks:
+  default:
+    driver: bridge
+
+volumes:
+  postgresql:
