@@ -2,7 +2,17 @@
   "name": "samples",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve",
+    "build": "nx build",
+    "test": "nx test",
+    "db:gen": "prisma generate --schema ./libs/prisma-${SERVICE}/schema.prisma",
+    "db:pull": "prisma db pull --schema ./libs/prisma-${SERVICE}/schema.prisma",
+    "db:push": "prisma db push --schema ./libs/prisma-${SERVICE}/schema.prisma",
+    "db:migrate:deploy": "prisma migrate deploy --schema ./libs/prisma-clients/${SERVICE}/prisma/schema.prisma",
+    "db:migrate:dev": "prisma migrate dev --schema ./libs/prisma-clients/${SERVICE}/prisma/schema.prisma --",
+    "postinstall": "SERVICE=inventory npm run db:gen && SERVICE=user npm run db:gen"
+  },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^9.0.0",
@@ -10,6 +20,7 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/microservices": "^9.2.1",
     "@nestjs/platform-express": "^9.0.0",
+    "@prisma/client": "^4.8.1",
     "amqp-connection-manager": "^4.1.10",
     "amqplib": "^0.10.3",
     "prisma": "^4.8.1",
