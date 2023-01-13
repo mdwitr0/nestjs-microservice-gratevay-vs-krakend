@@ -11,6 +11,7 @@ datasource db {
 
 model User {
   id        String   @id @default(cuid())
+  uuid      String   @unique @default(uuid())
   email     String   @unique
   name      String?
   createdProducts  String[]
