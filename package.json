@@ -12,6 +12,7 @@
     "@nestjs/platform-express": "^9.0.0",
     "amqp-connection-manager": "^4.1.10",
     "amqplib": "^0.10.3",
+    "prisma": "^4.8.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0",
     "tslib": "^2.3.0"

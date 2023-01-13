@@ -16,7 +16,11 @@
     "baseUrl": ".",
     "paths": {
       "@actions": ["libs/actions/src/index.ts"],
-      "@enum": ["libs/enum/src/index.ts"]
+      "@enum": ["libs/enum/src/index.ts"],
+      "@prisma-clients/inventory": [
+        "libs/prisma-clients/inventory/src/index.ts"
+      ],
+      "@prisma-clients/user": ["libs/prisma-clients/user/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
