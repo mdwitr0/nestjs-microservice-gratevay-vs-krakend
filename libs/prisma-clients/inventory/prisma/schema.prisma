@@ -1,7 +1,7 @@
 generator client {
-  provider = "prisma-client-js"
-  binaryTargets   = ["native"]
-  output   = "../../../../node_modules/.prisma/inventory-client"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native"]
+  output        = "../../../../node_modules/.prisma/inventory-client"
 }
 
 datasource db {
@@ -9,13 +9,27 @@ datasource db {
   url      = env("INVENTORY_DB_URL")
 }
 
+generator nestjsDto {
+  provider                        = "prisma-generator-nestjs-dto"
+  output                          = "../src/generated/dto"
+  outputToNestJsResourceStructure = "false"
+  exportRelationModifierClasses   = "true"
+  reExport                        = "true"
+  createDtoPrefix                 = "Create"
+  updateDtoPrefix                 = "Update"
+  dtoSuffix                       = "Dto"
+  entityPrefix                    = ""
+  entitySuffix                    = ""
+  fileNamingStyle                 = "camel"
+}
+
 model Product {
-  id        String   @id @default(cuid())
-  uuid      String   @unique @default(uuid())
+  id        String    @id @default(cuid())
+  uuid      String    @unique @default(uuid())
   name      String
   price     Float
   creatorId String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
   deletedAt DateTime?
 }
