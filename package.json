@@ -30,6 +30,7 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.0.0",
     "@nrwl/devkit": "15.4.8",
@@ -43,12 +44,11 @@
     "@nrwl/workspace": "15.4.8",
     "@types/faker": "^6.6.9",
     "@types/jest": "28.1.1",
-    "@types/node": "latest",
+    "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
-    "@faker-js/faker": "^7.6.0",
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
     "nx": "15.4.8",
