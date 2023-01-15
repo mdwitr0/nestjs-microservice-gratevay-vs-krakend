@@ -11,4 +11,8 @@ export class AppService {
   getOne(payload: ConnectUserDto): Promise<UserEntity> {
     return this.prismaService.user.findUnique({ where: payload });
   }
+
+  getMany(): Promise<UserEntity[]> {
+    return this.prismaService.user.findMany({ where: {} });
+  }
 }
