@@ -29,6 +29,9 @@
       ],
       "@prisma-clients/user": [
         "libs/prisma-clients/user/src/index.ts"
+      ],
+      "@dto": [
+        "libs/dto/src/index.ts"
       ]
     }
   },

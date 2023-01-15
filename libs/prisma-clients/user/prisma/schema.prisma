@@ -11,7 +11,7 @@ datasource db {
 
 generator nestjsDto {
   provider                        = "prisma-generator-nestjs-dto"
-  output                          = "../../../../node_modules/.prisma/user-dto"
+  output                          = "../../../dto/src/lib/generated/user"
   outputToNestJsResourceStructure = "false"
   exportRelationModifierClasses   = "true"
   reExport                        = "true"
