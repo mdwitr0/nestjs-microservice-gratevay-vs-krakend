@@ -18,9 +18,8 @@ generator nestjsDto {
   createDtoPrefix                 = "Create"
   updateDtoPrefix                 = "Update"
   dtoSuffix                       = "Dto"
-  entityPrefix                    = ""
   entitySuffix                    = "Entity"
-  fileNamingStyle                 = "camel"
+  fileNamingStyle                 = "kebab"
 }
 
 model User {
