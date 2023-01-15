@@ -4,6 +4,7 @@ import {
   FindManyProductsDto,
   ProductEntity,
   UserEntity,
+  UserWithCreatedProductsDto,
 } from '@dto';
 import { Services } from '@enum';
 import { Inject, Injectable } from '@nestjs/common';
@@ -33,5 +34,24 @@ export class AppService {
     );
 
     return products;
+  }
+
+  async findUsersWithProducts(): Promise<UserWithCreatedProductsDto[]> {
+    const users = await lastValueFrom(
+      this.userService.send<UserEntity[]>(UserActions.FIND_MANY, {})
+    );
+    const products = await lastValueFrom(
+      this.inventoryService.send<ProductEntity[], FindManyProductsDto>(
+        InventoryActions.FIND_MANY,
+        { ids: users.map((user) => user.createdProducts).flat() }
+      )
+    );
+
+    return users.map((user) => ({
+      ...user,
+      createdProducts: products.filter(
+        (product) => product.creatorId === user.uuid
+      ),
+    }));
   }
 }
