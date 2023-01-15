@@ -14,7 +14,20 @@
         "main": "apps/inventory/src/main.ts",
         "tsConfig": "apps/inventory/tsconfig.app.json",
         "assets": ["apps/inventory/src/assets"],
-        "webpackConfig": "apps/inventory/webpack.config.js"
+        "webpackConfig": "apps/inventory/webpack.config.js",
+        "tsPlugins": [
+          {
+            "name": "@nestjs/swagger/plugin",
+            "options": {
+              "dtoFileNameSuffix": [".entity.ts", ".dto.ts"],
+              "controllerFileNameSuffix": [".controller.ts"],
+              "classValidatorShim": true,
+              "dtoKeyOfComment": "description",
+              "controllerKeyOfComment": "description",
+              "introspectComments": true
+            }
+          }
+        ]
       },
       "configurations": {
         "production": {
