@@ -10,33 +10,20 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@actions": [
-        "libs/actions/src/index.ts"
-      ],
-      "@enum": [
-        "libs/enum/src/index.ts"
-      ],
+      "@actions": ["libs/actions/src/index.ts"],
+      "@dto": ["libs/dto/src/index.ts"],
+      "@enum": ["libs/enum/src/index.ts"],
       "@prisma-clients/inventory": [
         "libs/prisma-clients/inventory/src/index.ts"
       ],
-      "@prisma-clients/user": [
-        "libs/prisma-clients/user/src/index.ts"
-      ],
-      "@dto": [
-        "libs/dto/src/index.ts"
-      ]
+      "@prisma-clients/user": ["libs/prisma-clients/user/src/index.ts"],
+      "@configs": ["libs/configs/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
