@@ -3,10 +3,10 @@ import { Body, Controller } from '@nestjs/common';
 import { AppService } from './app.service';
 import { MessagePattern } from '@nestjs/microservices';
 import { InventoryActions } from '@actions';
-import { ConnectProductDto, ProductEntity } from '@dto';
+import { ConnectProductDto, FindManyProductsDto, ProductEntity } from '@dto';
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
   @MessagePattern(InventoryActions.FIND_ONE)
   getOne(@Body() payload: ConnectProductDto): Promise<ProductEntity> {
@@ -14,7 +14,7 @@ export class AppController {
   }
 
   @MessagePattern(InventoryActions.FIND_MANY)
-  getMany(): Promise<ProductEntity[]> {
-    return this.appService.getMany();
+  getMany(payload: FindManyProductsDto): Promise<ProductEntity[]> {
+    return this.appService.getMany(payload);
   }
 }

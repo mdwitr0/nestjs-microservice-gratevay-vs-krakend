@@ -1,4 +1,4 @@
-import { ConnectProductDto, ProductEntity } from '@dto';
+import { ConnectProductDto, FindManyProductsDto, ProductEntity } from '@dto';
 import { Injectable } from '@nestjs/common';
 import {PrismaInventoryService } from '@prisma-clients/inventory';
 
@@ -10,7 +10,9 @@ export class AppService {
     return this.prismaService.product.findUnique({ where: payload });
   }
 
-  getMany(): Promise<ProductEntity[]> {
-    return this.prismaService.product.findMany({ where: {} });
+  getMany(payload: FindManyProductsDto): Promise<ProductEntity[]> {
+    return this.prismaService.product.findMany({ where: { uuid: {
+      in: payload.ids
+    }} });
   }
 }
