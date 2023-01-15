@@ -9,4 +9,8 @@ export class AppService {
   getOne(payload: ConnectProductDto): Promise<ProductEntity> {
     return this.prismaService.product.findUnique({ where: payload });
   }
+
+  getMany(): Promise<ProductEntity[]> {
+    return this.prismaService.product.findMany({ where: {} });
+  }
 }
